@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Sign up</title>
+</head>
+<body>
+    <form id="myform">
+        <fieldset>
+            <table class="tableClass">
+                <thead class="header">
+                    <tr>
+                        <th colspan="2">User Information</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>
+                        <label>First name <span class="astericSign">*</span> :</label>
+                    </td>
+                    <td>
+                        <input type="text" name="fname" id="fname">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>Last name <span class="astericSign">*</span> :</label>
+                    </td>
+                    <td>
+                        <input type="text" name="lname" id="lname">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Date of Birth <span class="astericSign">*</span> :</label>
+                    </td>
+                    <td>
+                        <input type="date" name="dob" id="dob">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Language <span class="astericSign">*</span> :</label>
+                    </td>
+                    <td id="language">
+                        <input type="checkbox" name="language" value="English"> English<br>
+                        <input type="checkbox" name="language" value="French"> French<br>
+                        <input type="checkbox" name="language" value="Chienese"> Chienese<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Email <span class="astericSign">*</span> :</label>
+                    </td>
+                    <td id="gender">
+                       <input type="email" id="email"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Contact Number <span class="astericSign">*</span> :</label>
+                    </td>
+                    <td>
+                        <input type="text" name="phone" id="phone">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button onclick="submitData()">SUBMIT</button></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <script type="text/javascript">        
+
+       /* 
+        * this function cheks all the input of checkbox and radio button
+        *  if they are chekced or not
+        * @params: element (checkbox/radio)
+        * @return boolean
+        */
+       function checkIfChecked(element){
+             var i=1;
+             var checked = true;
+             while(i < element.length && checked){
+                 if ( element[i].checked) {
+                  checked = false; 
+                 }                 
+                i++;
+            }
+        console.log("in funct"+checked);
+        return checked;
+        }
+
+       /* 
+        * this function cheks all the input is filled or not
+        * if they are empty it will alert
+        * 
+        */
+        function submitData(){
+        
+            var fname = document.getElementById("fname");
+            var lname = document.getElementById("lname");
+            var dob = document.getElementById("dob");
+            var phone = document.getElementById("phone");
+            var email = document.getElementById("email");
+            var email = document.getElementById("email");
+            var language = document.getElementsByName("language");
+             
+           var checkLanguage = checkIfChecked(language);
+
+            if( fname.value == "" ){ 
+                alert("First name is required");                
+            }else if( lname.value == "" ){ 
+                alert("Last name is required");
+            }else if( dob.value == "" ){ 
+                alert("Date of birth is required");
+            }else if (checkLanguage) {
+                  alert("Language is required, Please select any one");
+            }else if( email.value == "" ){
+                alert("Email is required.");
+            }else if( phone.value == "" ){ 
+                alert("Phone number is required");
+            }else{
+                alert("Successfully submited!!");
+            }
+        }
+
+    </script>
+</body>
+</html>

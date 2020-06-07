@@ -1,0 +1,98 @@
+/*
+ This is stylesheet file for Nani's website
+ Tem members : Nami Dave
+ 			   Nidhi Gajera
+ 			   @Monday , October 7, 2019
+ Page creater : 			   
+
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+    background-color: darkolivegreen;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+    float: left;
+    width: 20%;
+    height: 550px;/* only for demonstration, should be removed */
+    background-color: forestgreen;
+    padding: 20px;
+}
+
+    /* Style the list inside the menu */
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+article {
+    float: left;
+    padding: 20px;
+    width: 80%;
+    background-color: lawngreen;
+    height: 550px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.leftbar {
+    float: left;
+    width: 20%;
+}
+.rightside {
+    float: left;
+    width: 80%;
+}
+.orderright {
+    float: left;
+    width: 20%;
+}
+
+.frenchisesheader {
+    height: 15%;
+    width: 80%;
+    margin: 0 auto;
+    background-color: orangered;
+    border: 1px solid black;
+}
+
+.ordercenter {
+    float: left;
+    width: 20%;
+}
+
+/* Style the footer */
+footer {
+    overflow:auto;
+    background-color: limegreen;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+    nav, article {
+        width: 100%;
+        height: auto;
+    }
+}

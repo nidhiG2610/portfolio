@@ -1,0 +1,57 @@
+body, table, form {
+    font-size: 20px;
+    font-style: 'Monospace';
+    margin: 0 auto;
+}
+
+.formdiv {
+    text-align: center;
+    // background: radial-gradient(circle, green, white);
+    padding: 50px 30px 50px 30px;
+    width: 900px;
+    height: auto;
+    background: rgba( 125, 58, 35, 0.3);
+    color:  darkgreen;  
+}
+    .formdiv table {
+     //   padding-top: 50px;
+    }
+        .formdiv table tr td .buttonClass {
+            margin-top: 10px;
+        }
+.formback {
+    padding: 60px 20px 40px 20px;
+}
+.heading {
+    background-color: lightblue;
+}
+table td{
+	text-align: left;
+}
+
+.title {
+    text-align:center;
+    font-size:30px;
+    color:crimson;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+input {
+    border-radius: 4px;
+    padding: 5px 10px 5px 10px;
+}
+.buttonClass {
+    font-size: 18px;
+    padding: 5px 10px 5px 10px;
+    color: crimson;
+   
+}
+.mainBody .heading ,.mainBody{
+    background-image: url('bg4.jpg');
+    background-repeat: repeat;
+    background-position: center;
+}
+.range {
+    color:sandybrown;
+}
+

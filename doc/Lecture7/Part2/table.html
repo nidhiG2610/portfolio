@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Index | User Information</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+    <body>
+        <table class="dataTable">
+
+            <thead>
+                <tr>
+                    <th>Profile</th>
+                    <th>User Name</th>
+                    <th>Contact Information</th>
+                    <th>Income Detail</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody id="tbody1"></tbody>
+        </table>
+
+        <fieldset>
+            <legend>Add New Data:</legend>
+            <table class="formClass">
+                <tr>
+                    <td class="lableClass">Upload Profile:</td>
+                    <td><input type="file" name="profileimage" id="profileimage" onchange="readURL(this)"></td>
+                </tr>
+                <tr>
+                    <td class="lableClass">First Name:</td>
+                    <td><input type="text" name="fname" id="fname"></td>
+                </tr>
+                <tr>
+                    <td class="lableClass">Middle Name:</td>
+                    <td><input type="text" name="mname" id="mname"></td>
+                </tr>
+                <tr>
+                    <td class="lableClass">Last Name:</td>
+                    <td><input type="text" id="lname"></td>
+                </tr>
+                <tr>
+                    <td class="lableClass">Email:</td>
+                    <td><input type="email" name="email" id="email"></td>
+                </tr>
+                <tr>
+                    <td class="lableClass">Postal Code:</td>
+                    <td><input type="text" name="pcode" id="pcode"></td>
+                </tr>
+                <tr>
+                    <td class="lableClass">Contact Nmber:</td>
+                    <td><input type="text" name="phone" id="phone"></td>
+                </tr>
+                <tr>
+                    <td class="lableClass">Salary:</td>
+                    <td><input type="text" name="salary1" id="salary1"></td>
+                </tr>
+                <tr>
+                    <td class="lableClass">City:</td>
+                    <td><input type="text" name="city" id="city"></td>
+                </tr>
+                <tr class="paddingTopClass"></tr>
+                <tr>
+                    <td colspan="2"><button onclick="addMoreRow()">SUBMIT</button></td>
+                </tr>
+
+            </table>
+           
+        </fieldset>        
+
+            <script type="text/javascript">
+
+		        // this array contains the collection of object which we need to show in table
+                var dataArray = [];
+                dataArray = [
+						{
+						profileimage:"selena.jpg",
+						fname:"Nidhi",
+						mname:"M",
+						lname:"Gajera",
+						pcode:"P7C 4P6",
+						email:"nidhigajera@gmail.com",
+						phone:"+1(807)-680-6004",
+						salary1:"6000CAD/Annum",
+						city:"Thunder Bay"
+						},
+						{
+						profileimage:"scot.jpg",
+						fname:"Parth",
+						mname:"M",
+						lname:"Gajera",
+						pcode:"PO0 4P6",
+						email:"pgajera@gmail.com",
+						phone:"+1(356)-680-6094",
+						salary1:"6500CAD/Annum",
+						city:"Hamilton"
+						},
+						{
+						profileimage:"lucy.png",
+						fname:"Komal",
+						mname:"A",
+						lname:"Bhalani",
+						pcode:"PG7 4N6",
+						email:"kbhalani@gmail.com",
+						phone:"+1(596)-563-5004",
+						salary1:"5000CAD/Annum",
+						city:"Thunder Bay"
+						}
+					];
+
+
+        autoAddData();
+
+
+        /* 
+        * this function append the html to the table
+        * It loads when the page called and create the teable elements
+        * 
+        */
+        var imagepath ="";
+		function autoAddData(argument) { 
+			 var code = "";
+			for(i=0; i<dataArray.length; i++){
+	        var row = "     	<tr><td><img id='demo' src='"+ dataArray[i].profileimage +"' /><br/><span name='username'>"+ dataArray[i].fname+" "+dataArray[i].lname  +"</span></td>				<td><span name='fname'>FirstName:</span>"+ dataArray[i].fname +"<br/><span name='mname'>MiddleName:</span> "+ dataArray[i].mname +"					<br/><span name='lname'>LastName:</span>				"+ dataArray[i].lname +"</td>                <td>                    <span name='pcode'>Postal code:</span>"+ dataArray[i].pcode +"</a>                    <br />                    <span name='email'>Email:</span>                    <a href='mailto:"+ dataArray[i].email +"' target='_blank' class='email'>"+ dataArray[i].email +"</a>                    <br />                    <span name='phone'>Phone:</span>                    <a href='tel:"+dataArray[i].phone+"' class='textDecoNone' target='_blank'>"+ dataArray[i].phone +"</a>                </td>				<td class='salary' name='salary1'>"+ dataArray[i].salary1 +"</td>				 <td  name='city'>"+ dataArray[i].city +"</td>			</tr>	        ";
+	        code = code+row+"\n";
+	          	}
+	          	document.getElementById("tbody1").innerHTML = code;
+                readURL(document.getElementById("profileimage"));
+	   }
+        /* 
+        * this function read the URL of uploaded image  
+        *  it assigns th epath to imagepath varibale
+        * 
+        */
+       function readURL(input) { 
+
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+              imagepath =  reader.onload = function (e) {
+               imagepath =e.target.result;
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        
+        }
+
+
+	   
+
+       /* 
+        * this function adds the new row to the table
+        *        which displays newly added values
+        * 
+        */
+		function addMoreRow() {
+             var obj ={};
+             obj["profileimage"] = imagepath;
+             obj["fname"] = document.getElementById("fname").value;
+             obj["mname"] = document.getElementById("mname").value;
+             obj["lname"]  =document.getElementById("lname").value;
+             obj["pcode"] =document.getElementById("pcode").value;
+             obj["email"] = document.getElementById("email").value;
+             obj["phone"] =document.getElementById("phone").value;
+             obj["salary1"] =document.getElementById("salary1").value+"CAD/Annum";
+             obj["city"] =document.getElementById("city").value;
+		    dataArray.push(obj);
+            autoAddData();                
+            
+		}
+
+
+    </script>
+    </body>
+	
+</html>		

@@ -1,0 +1,64 @@
+/*
+    this file is created for learning purpose
+    This is a college asssignment by Nidhi Gajera
+    Date 12 November, 2019
+*/
+
+div {padding: 0px;}
+.dataTable, .dataTable tr, .dataTable td, .dataTable th {
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    margin: 0 auto;
+}
+    .dataTable tr th{
+        background-color:antiquewhite;
+    }
+span {
+    text-align: justify; font-weight: bold;
+}
+#demo{
+    text-align:center;
+}
+
+img {
+    width: 64px;
+    height: 64px;
+}
+
+.email {
+    font-family: Courier New;
+}
+
+.salary {
+    font-family: Courier New;
+    font-size: 18pt;
+}  			
+        .textDecoNone{
+          text-decoration:none;
+        }
+
+.formClass {
+    padding-top: 30px;
+    margin: 0 auto;
+}
+
+button {
+    font-size: 18px;
+    margin-left: 100px;
+    background-color: antiquewhite;
+    color: #242424;
+    font-size: 14px;
+    text-transform: uppercase;
+    background: antiquewhite;
+    padding: 10px 40px;
+}
+.lableClass {
+    font-weight: bold;
+    font-size: 20px;
+}
+fieldset{
+    width:30%;
+    margin: 20px auto 0px auto;
+    background-color:aliceblue;
+}

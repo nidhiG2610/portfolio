@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Survey Form</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<meta charset = "UTF-8">
+	<body class="mainBody">
+		<div class='heading'>
+            <div class="title">Atlanta Fabric survey</div>
+        </div>
+
+	<form class='formdiv' method='get' action='response.html'>
+		<table>	
+            <tbody>
+                <tr>
+                    <td>First name:</td>
+                    <td><input type="text" name='fname' placeholder="Enter your first name"></td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td><input type="text" name='lname' placeholder="Enter your last name"></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>
+                        <input type="email" name='email' placeholder="Enter your email id">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Telephone number:
+                    <td><input type="tel" name='telephone' placeholder="Enter your number"></td>
+                </tr>
+                <tr>
+                    <td>Gender :
+                    <td>
+                        <input type="radio" value='male' name='gender'> Male <br />
+                        <input type="radio" value='female' name='gender' checked> Female <br />
+                        <input type="radio" value='other' name='gender'> Other
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td>Language:
+                    <td>
+                        <input type="checkbox" value='english' name='language'> English <br />
+                        <input type="checkbox" value='french' name='language' checked> French <br />
+                        <input type="checkbox" value='chienese' name='language'> Chienese
+                    </td>
+                </tr>
+                <tr>
+                    <td>Number of items you ordered:
+                    <td><input type="number" name='items'></td>
+                </tr>
+                <tr>
+                    <td>Choose color for your fabric:
+                    <td><input type="color" name='fcolor'> </td>
+                </tr>
+                <tr>
+                    <td>What did you ordered?
+                    <td>
+                        <table>
+                            <tr>
+                                <td><input type="checkbox" value='top' name='language'> Top </td>
+                                <td><input type="checkbox" value='tshirt' name='language' checked> T-shirt</td>
+                            </tr>
+                            <tr>
+                                <td> <input type="checkbox" value='tank top' name='language'> Tank top</td>
+                                <td> <input type="checkbox" value='mini top' name='language'> Mini top</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Expected delivery date:
+                    <td><input type="date" name='exddate'></td>
+                </tr>
+                <tr>
+                    <td>Delivery date:
+                    <td><input type="date" name='ddate'></td>
+                </tr>
+                <tr>
+                    <td>You ordered through?:
+                    <td>
+                        <select name='orderdfrom'>
+                            <option>choose one</option>
+                            <option value="website">On the website</option>
+                            <option value="application">Mobile Applicaion</option>
+                            <option value="oncall">On call</option>
+                            <option value="instore">In store</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Upload your file for reference:
+                    <td><input type="file" name='reference'></td>
+                </tr>
+
+                <tr>
+                    <td>Are you satisfied by our services?
+                    <td><input class="range" type="range" name='review' value="40"></td>
+                </tr>
+                <tr>
+                    <td><input class="buttonClass" type="reset" name='reset'></td>
+                    <td><input class="buttonClass" type="submit" name='submit'> </td>
+                </tr>
+            </tbody>
+    	</table>
+    </form>
+	</body>
+</html>

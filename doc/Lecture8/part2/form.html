@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Sign up</title>
+</head>
+<body>
+        <fieldset>
+            <table class="tableClass">
+                <thead class="header">
+                    <tr>
+                        <th colspan="2">User Information</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>
+                        <label>First name <span class="astericSign">*</span> :</label>
+                    </td>
+                    <td>
+                        <input type="text" name="fname" id="fname">
+                        <div id="errorFname"></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>Last name <span class="astericSign">*</span> :</label>
+                    </td>
+                    <td>
+                        <input type="text" name="lname" id="lname">
+                        <div id="errorlname"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Date of Birth <span class="astericSign">*</span> :</label>
+                    </td>
+                    <td>
+                        <input type="date" name="dob" id="dob">
+                        <div id="errordob"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Language <span class="astericSign">*</span> :</label>
+                    </td>
+                    <td id="language">
+                        <input type="checkbox" name="language" value="English"> English<br>
+                        <input type="checkbox" name="language" value="French"> French<br>
+                        <input type="checkbox" name="language" value="Chienese"> Chienese<br>
+                        <div id="errorlanguage"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Email <span class="astericSign">*</span> :</label>
+                    </td>
+                    <td id="gender">
+                        <input type="email" id="email">
+                        <div id="errorEmail"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Contact Number <span class="astericSign">*</span> :</label>
+                    </td>
+                    <td>
+                        <input type="text" name="phone" id="phone">
+                        <div id="errorPhone"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button id="submitButton" onclick="submitData()">SUBMIT</button></td>
+                </tr>
+            </table>
+        </fieldset>
+    <script type="text/javascript">        
+
+       /* 
+        * this function cheks all the input of checkbox and radio button
+        *  if they are chekced or not
+        * @params: element (checkbox/radio)
+        * @return boolean
+        */
+       function checkIfChecked(element){
+             var i=1;
+             var checked = true;
+             while(i < element.length && checked){
+                 if ( element[i].checked) {
+                  checked = false; 
+                 }                 
+                i++;
+            }
+        console.log("in funct"+checked);
+        return checked;
+        }
+
+       /* 
+        * this function cheks all the input is filled or not
+        * if they are empty it will alert
+        * 
+        */
+        function submitData(){
+        
+            var fname = document.getElementById("fname");
+            var lname = document.getElementById("lname");
+            var dob = document.getElementById("dob");
+            var phone = document.getElementById("phone");
+            var email = document.getElementById("email");
+            var email = document.getElementById("email");
+            var language = document.getElementsByName("language");
+             
+           var checkLanguage = checkIfChecked(language);
+            var flag = 1;
+            if( fname.value == "" ){ 
+                      document.getElementById("errorFname").innerHTML = "First name is required.";
+                       flag=0; 
+            }else {
+                     document.getElementById("errorFname").innerHTML = "";
+                    flag=1; 
+            }
+            if( lname.value == "" ){ 
+                document.getElementById("errorlname").innerHTML = "Last name is required.";
+                flag=0; 
+            }else {
+                     document.getElementById("errorlname").innerHTML = "";
+                    flag=1; 
+            }
+            if( dob.value == "" ){ 
+                flag=0; 
+                document.getElementById("errordob").innerHTML = "Date of Birth is required.";
+            }else {
+                    flag=1; 
+                     document.getElementById("errordob").innerHTML = "";
+            } 
+            if (checkLanguage) {
+                flag=0; 
+                  document.getElementById("errorlanguage").innerHTML = "Language is required, Please select any one.";
+            }else {
+                     flag=1; 
+                     document.getElementById("errorlanguage").innerHTML = "";
+            }
+            if( email.value == "" ){
+                document.getElementById("errorEmail").innerHTML = "Email is required.";
+                flag=0; 
+            }else {
+                     document.getElementById("errorEmail").innerHTML = "";
+                    flag=1; 
+            }
+            if( phone.value == "" ){ 
+                flag=0; 
+               document.getElementById("errorPhone").innerHTML = "Phone number is required.";
+            }else {
+                    flag=1; 
+                     document.getElementById("errorPhone").innerHTML = "";
+            }
+                       
+            if(flag){
+                alert("Submitted successfully!");
+            }            
+        }
+
+    </script>
+</body>
+</html>

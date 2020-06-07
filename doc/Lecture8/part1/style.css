@@ -1,0 +1,54 @@
+﻿/*
+    this file is created for learning purpose
+    This is a college asssignment by Nidhi Gajera
+    Date 14 November, 2019
+*/
+
+
+form {
+    padding: 30px;
+}
+.astericSign {
+    color: red;
+    font-size:20px;
+}
+fieldset {
+    width: 40%;
+    margin: 20px auto 0px auto;
+    background-color: aliceblue;
+}
+.tableClass {
+    padding-top: 30px;
+    margin: 0 auto;
+}
+.header{
+    font-size:30px;    
+}
+label {
+    font-weight: bold;
+    font-size: 20px;
+}
+button {
+    font-size: 18px;
+    margin-left: 80px;
+    background-color: antiquewhite;
+    color: #242424;
+    font-size: 14px;
+    text-transform: uppercase;
+    background: antiquewhite;
+    padding: 10px 40px;
+    margin-top: 10px;
+}
+input{
+    width:200px;
+    height:20px;
+    margin-top:10px;
+}
+    input[type="checkbox"], input[type="radio"] {
+        width: 18px;
+        height: 22px;
+    }
+#gender,#language{
+    font-size:20px;
+}
+

@@ -1,0 +1,20 @@
+.content-item-icon {
+  position: relative; }
+  .content-item-icon__status {
+    position: absolute;
+    bottom: -0.1875rem;
+    left: -0.1875rem; }
+    .content-item-icon__status bb-svg-icon[icon="complete"] {
+      background-color: #ffffff;
+      border-radius: 50%;
+      color: #007d2c; }
+    .content-item-icon__status bb-svg-icon[icon="started"] {
+      background-color: #ffffff;
+      border-radius: 50%;
+      color: #007d2c; }
+    .content-item-icon__status bb-svg-icon[icon="lock"] {
+      background-color: #ffffff;
+      border-radius: 50%; }
+
+
+/*# sourceMappingURL=2-7d964602f14e65fc2781.css.map*/

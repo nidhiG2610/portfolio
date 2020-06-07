@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Index | TBay Tourisum</title>
+		<style type="text/css">
+			div {padding: 0px;}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+		</table>
+	</body>
+</html>		

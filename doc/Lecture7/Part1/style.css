@@ -1,0 +1,20 @@
+div {padding: 0px;}
+            table, tr, td, th {
+                border: 2px solid black;
+                border-collapse: collapse;
+                text-align: center;
+                padding:10px;
+            }
+  			img{
+  				width: 64px;
+  				height: 64px;
+  			}
+  			.email{
+  				font-family: Courier New;
+  			}
+  			.salary{
+  				font-family: Courier New;font-size: 18pt;background-color: green;
+  			}
+        .textDecoNone{
+          text-decoration:none;
+        }

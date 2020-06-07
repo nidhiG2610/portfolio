@@ -1,0 +1,16 @@
+body,table,form{
+	font-size: 22px;
+	font-style: 'Monospace';
+	margin: 0 auto;
+}
+
+.formdiv{
+	text-align: center;
+}
+.heading{
+	height: 200px;
+	background-color:lightblue;
+}
+table td{
+	text-align: left;
+}

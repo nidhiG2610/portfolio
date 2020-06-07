@@ -1,0 +1,106 @@
+﻿body {
+    margin: 0px !important;
+}
+div {
+    padding: 0px;
+}
+.clearfix {
+    clear:both;
+}
+.paddingdiv { 
+    height:10px;
+}
+.topbar {
+    height: 35px;
+    background-color: darkblue;
+    font-size: 20px;
+    color: #ffffff;
+}
+.promotiondiv {
+    text-align:center;
+    padding:5px 0px;
+    /*position:relative;
+    -webkit-animation: myfirst 5s 2; /* Safari 4.0 - 8.0 */
+    /*-webkit-animation-direction: alternate; /* Safari 4.0 - 8.0 */
+    /*animation: myfirst 20s 2;
+    animation-direction: alternate;*/
+}
+@keyframes myfirst {
+    0% {
+        left: 0px;
+        top: 0px;
+    }
+
+    100% {
+        left: 300px;
+        top: 0px;
+    }
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes myfirst {
+    0% {
+        left: 0px;
+        top: 0px;
+    }
+
+    100% {
+        left: 200px;
+        top: 0px;
+    }
+}
+
+.header {
+    height: 80px;
+    background-color: lightblue;
+    position: relative;
+}
+.sitelogo {
+    color: lightcoral;
+    padding: 14px 16px;
+    float: left;
+    font-size: 50px;
+    font:bold;
+}
+.maindiv {
+    font-size: 60px;
+    color: lightcoral;
+    text-align: center;
+    margin-top: 0px
+}
+.mainmenu {
+    list-style-type: none;
+}
+    .mainmenu a {
+        float: right;
+        display: inline;
+        color: white;
+        text-align: center;
+        padding: 20px 16px;
+        font-size: 25px;
+        text-decoration: none;
+    }
+
+.content {
+    padding-top: 0px;
+}
+.leftsidebar {
+    width: 20%;
+    float: left;
+    background: aquamarine;
+}
+.rightsidebar {
+    width: 20%;
+    float: left;
+    background: aquamarine;
+}
+.section {
+    width:60%;
+    float:left;
+    display:inline;
+   /*// position:absolute;*/
+}
+.footer {
+    background-color: lightcoral;
+    height: 70px;
+    width: -webkit-fill-available;
+}
