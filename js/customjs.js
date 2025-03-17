@@ -25,9 +25,7 @@ $(document).ready(function (){
                 $('html, body').animate({
                     scrollTop: $("html,body").offset().top
                 }, 1000);
-            });
-
-          
+            });          
         });
 
        
@@ -60,7 +58,7 @@ $(document).ready(function (){
              collapsible: true,
              active: false
             });
-        });
+    });
 
 
 $(".fa-heart").on('click',function(){ 
@@ -71,7 +69,7 @@ $(".fa-heart").on('click',function(){
     }
 });
 
- $( function() {
+$( function() {
     $( "#dialogBox1" ).dialog({
       autoOpen: false,
        width: "auto",
@@ -210,5 +208,5 @@ $(".fa-heart").on('click',function(){
         $("#dialogBox8").dialog("open");
       
     });
-  } );
+});
 
