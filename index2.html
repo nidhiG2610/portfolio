@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -8,9 +8,330 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="style/style.css" />
+    <style>
+        :root {
+            --bg: #edf2f7;
+            --ink: #1f2937;
+            --muted: #4b5563;
+            --panel: #ffffff;
+            --line: #d6dde6;
+            --accent: #0f766e;
+            --accent-2: #0b4f6c;
+            --chip: #e2f3f2;
+            --shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at 8% 10%, #d6e9f5 0%, transparent 35%),
+                radial-gradient(circle at 85% 90%, #d8f1ef 0%, transparent 32%),
+                var(--bg);
+            min-height: 100vh;
+        }
+
+        .page {
+            max-width: 1200px;
+            margin: 28px auto;
+            padding: 0 18px;
+            display: flex;
+            gap: 22px;
+            align-items: flex-start;
+        }
+
+        .sidebar {
+            flex: 0 0 290px;
+            background: linear-gradient(180deg, #10384d 0%, #0f766e 100%);
+            color: #ffffff;
+            border-radius: 20px;
+            padding: 24px;
+            position: sticky;
+            top: 18px;
+            box-shadow: var(--shadow);
+        }
+
+        .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.35);
+            object-fit: cover;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            margin: 0;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 30px;
+            line-height: 1.1;
+        }
+
+        .tagline {
+            margin: 10px 0 0;
+            line-height: 1.45;
+            font-size: 14px;
+            color: #e6fbf8;
+        }
+
+        .quick-links {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .quick-links a {
+            color: #ffffff;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 10px;
+            padding: 9px 12px;
+            font-size: 14px;
+        }
+
+        .quick-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .content {
+            flex: 1;
+            background: var(--panel);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--line);
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 18px;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 14px;
+        }
+
+        .tab-button {
+            border: 1px solid var(--line);
+            background: #f8fafc;
+            color: var(--ink);
+            padding: 10px 14px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: "IBM Plex Sans", sans-serif;
+        }
+
+        .tab-button.active {
+            background: var(--accent);
+            color: #ffffff;
+            border-color: var(--accent);
+        }
+
+        .tab-panel {
+            display: none;
+            animation: showTab 0.35s ease;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        @keyframes showTab {
+            from {
+                opacity: 0;
+                transform: translateY(6px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .panel-title {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 28px;
+            margin: 4px 0 10px;
+        }
+
+        .summary {
+            color: var(--muted);
+            line-height: 1.65;
+            max-width: 78ch;
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 14px;
+        }
+
+        .card {
+            flex: 1 1 320px;
+            border: 1px solid var(--line);
+            border-left: 5px solid var(--accent);
+            border-radius: 12px;
+            padding: 14px 16px;
+            background: #ffffff;
+        }
+
+        .card h3 {
+            margin: 0 0 8px;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 20px;
+        }
+
+        .card ul {
+            margin: 0;
+            padding-left: 18px;
+            color: var(--muted);
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .timeline {
+            margin-top: 6px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .timeline-item {
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 14px 16px;
+            background: #fcfdff;
+        }
+
+        .timeline-item h3 {
+            margin: 0;
+            font-size: 20px;
+            font-family: "Space Grotesk", sans-serif;
+            color: var(--accent-2);
+        }
+
+        .timeline-item .role-meta {
+            margin-top: 3px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .timeline-item ul {
+            margin: 10px 0 0;
+            padding-left: 18px;
+            color: var(--muted);
+            line-height: 1.55;
+        }
+
+        .chips {
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-groups {
+            margin-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .skill-group {
+            flex: 1 1 320px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 12px;
+            background: #fbfdff;
+        }
+
+        .skill-group h3 {
+            margin: 0 0 10px;
+            font-size: 18px;
+            font-family: "Space Grotesk", sans-serif;
+            color: var(--accent-2);
+        }
+
+        .chip {
+            font-size: 13px;
+            background: var(--chip);
+            color: #075b56;
+            border: 1px solid #b5dfdb;
+            border-radius: 999px;
+            padding: 6px 10px;
+        }
+
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            margin: 8px 0 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            color: var(--muted);
+        }
+
+        .contact-list a {
+            color: var(--accent-2);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-list a:hover {
+            text-decoration: underline;
+        }
+
+        .social {
+            margin-top: 14px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid var(--line);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-2);
+            text-decoration: none;
+            background: #f8fbff;
+        }
+
+        .social a:hover {
+            background: #e9f3ff;
+        }
+
+        @media (max-width: 960px) {
+            .page {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                position: static;
+                width: 100%;
+            }
+
+            .content {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
-<body class="portfolio-v2">
+<body>
     <main class="page">
         <aside class="sidebar">
             <img class="avatar" src="images/mypicc.jpg" alt="Nidhi Gajera" />
@@ -20,17 +341,8 @@
 
             <div class="quick-links">
                 <a href="index.html">View Existing Portfolio</a>
+                <a href="cv.html">View CV Page</a>
                 <a href="doc/NIDHI GAJERA - Full stack developer.pdf" target="_blank">Download Resume</a>
-            </div>
-
-            <div class="quick-links quick-projects">
-                <div class="quick-links-title">Projects</div>
-                <a href="projects.html">View Projects</a>
-            </div>
-
-            <div class="quick-links quick-projects">
-                <div class="quick-links-title">Assignments</div>
-                <a href="assignments.html">View Assignments</a>
             </div>
         </aside>
 
@@ -44,7 +356,7 @@
 
             <article class="tab-panel active" id="tab-profile" role="tabpanel" aria-labelledby="btn-profile">
                 <h2 class="panel-title">Profile</h2>
-                <p class="summary">Senior Full-Stack Engineer with 5+ years of experience building, maintaining, and modernizing production web applications. Strong expertise in PHP-based backend systems, combined with hands-on development of Node.js (TypeScript) microservices and modern frontend applications using React. Proven experience migrating legacy systems to scalable, cloud-native architectures deployed in AWS. Comfortable owning features end-to-end from design and implementation through production support, while mentoring engineers and contributing to architectural direction.</p>
+                <p class="summary">I build scalable web applications using Laravel, modern JavaScript frameworks, and cloud infrastructure. My work focuses on creating reliable APIs, improving system performance, and delivering maintainable code in collaborative Agile environments.</p>
                 <div class="skill-groups">
                     <section class="skill-group">
                         <h3>Backend and Architecture</h3>
@@ -182,7 +494,7 @@
                         <h3>Collaboration</h3>
                         <ul>
                             <li>Worked in Agile environments, contributing to sprint planning, retrospectives, and code reviews.</li>
-                            <li>Collaborated with designers using Figma and product teams to deliver features aligned with business goals.</li>
+                            <li>Collaborated with designers and product teams to deliver features aligned with business goals.</li>
                         </ul>
                     </section>
                 </div>
